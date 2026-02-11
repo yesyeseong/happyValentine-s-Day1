@@ -1,30 +1,44 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>게임 페이지</title>
-    <link rel="stylesheet" href="styles.css"> <!-- 공통 CSS 파일 링크 -->
-</head>
 <body>
-    <div>
-        <h1>연애 시작날을 맞춰보세요!</h1>
-        <p>당신의 답변:</p>
-        <input type="text" id="answer" placeholder="네 자리를 입력하세요" maxlength="4">
-        <button onclick="checkAnswer()">확인</button>
-        <p id="message"></p>
-    </div>
+<div class="container">
+    <h1>연애 시작날을 맞춰보세요 💌</h1>
+    <input type="text" id="answer" placeholder="네 자리 입력" maxlength="4">
+    <button onclick="checkAnswer()">확인</button>
+    <p id="message"></p>
 
-    <script>
-        function checkAnswer() {
-            const answer = document.getElementById('answer').value;
-            if (answer === '0811') { // 정답
-                document.getElementById('message').innerHTML = "정답입니다! 다음 페이지 비밀번호는 '사랑해'입니다!";
-                setTimeout(() => { location.href = 'next.html'; }, 2000); // 2초 후 다음 페이지로 이동
-            } else {
-                document.getElementById('message').innerHTML = "틀렸습니다. 다시 시도해보세요!";
-            }
-        }
-    </script>
+    <div id="passwordBox" style="display:none;">
+        <p>암호를 입력하세요 💕</p>
+        <input type="text" id="password">
+        <button onclick="checkPassword()">입력</button>
+    </div>
+</div>
+
+<script>
+function checkAnswer(){
+    const answer=document.getElementById("answer").value;
+    if(answer==="0811"){
+        document.getElementById("message").innerHTML="정답입니다! 암호는 '사랑해' 💖";
+        document.getElementById("passwordBox").style.display="block";
+    }else{
+        document.getElementById("message").innerHTML="틀렸어요 다시 생각해봐 💭";
+    }
+}
+
+function checkPassword(){
+    const password=document.getElementById("password").value;
+    if(password==="사랑해"){
+        location.href="next.html";
+    }else{
+        alert("암호가 틀렸어요 💔");
+    }
+}
+
+for(let i=0;i<20;i++){
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="🍫";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(4+Math.random()*3)+"s";
+    document.body.appendChild(heart);
+}
+</script>
 </body>
-</html>
