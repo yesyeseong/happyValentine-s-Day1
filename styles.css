@@ -1,29 +1,100 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
+    font-family: 'Arial', sans-serif;
     text-align: center;
-    font-family: Arial, sans-serif;
-    background-color: #ffcccb; /* 핑크색 배경 */
-    background-image: url('chocolate.png'), url('heart.png'); /* 초콜릿과 하트 이미지 */
-    background-repeat: no-repeat, no-repeat;
-    background-size: 100px, 50px; /* 이미지 크기 조절 */
-    background-position: 20% 20%, 80% 80%; /* 이미지 위치 조정 */
-    height: 100vh; /* 화면 전체 높이 */
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff9a9e, #ff6a88);
+    color: white;
 }
-h1, p {
-    color: #333; /* 글씨 색상 */
+
+/* 카드 박스 */
+.container {
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(15px);
+    padding: 40px;
+    border-radius: 25px;
+    width: 90%;
+    max-width: 450px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    animation: fadeIn 1.5s ease-in-out;
 }
+
+h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+p {
+    margin: 15px 0;
+}
+
+img {
+    width: 100%;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
 input {
-    padding: 10px;
-    font-size: 18px;
-    color: #666; /* 흐린 회색 글씨 */
-    width: 200px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    padding: 12px;
+    width: 80%;
+    border-radius: 20px;
+    border: none;
+    font-size: 16px;
+    text-align: center;
 }
+
 button {
-    padding: 10px 20px;
-    font-size: 18px;
     margin-top: 20px;
+    padding: 12px 25px;
+    border-radius: 25px;
+    border: none;
+    background: white;
+    color: #ff4e8a;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+/* 하트 애니메이션 */
+.heart {
+    position: absolute;
+    font-size: 20px;
+    animation: float 6s linear infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh) scale(0.5); opacity: 0; }
+    50% { opacity: 1; }
+    100% { transform: translateY(-10vh) scale(1.2); opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from {opacity: 0; transform: translateY(20px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+/* 마지막 문구 */
+.big-message {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 20px;
+    animation: pop 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes pop {
+    from { transform: scale(1); }
+    to { transform: scale(1.05); }
 }
