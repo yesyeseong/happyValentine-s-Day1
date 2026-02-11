@@ -11,17 +11,17 @@
 <div class="container">
     <h1>💖 우리의 특별한 날 💖</h1>
     <img src="your_memory_photo.jpg" alt="우리의 추억">
-    <p>세상에서 제일 소중한 사람 💕</p>
-    <button onclick="location.href='game.html'">게임 시작</button>
+    <p>오늘은 우리만의 특별한 날이야 💕</p>
+    <button onclick="location.href='game.html'">게임 시작 💌</button>
 </div>
 
 <script>
-for(let i=0;i<25;i++){
+for(let i=0;i<40;i++){
     let heart=document.createElement("div");
     heart.className="heart";
-    heart.innerHTML="❤️";
+    heart.innerHTML="💗";
     heart.style.left=Math.random()*100+"vw";
-    heart.style.animationDuration=(3+Math.random()*3)+"s";
+    heart.style.animationDuration=(2+Math.random()*3)+"s";
     document.body.appendChild(heart);
 }
 </script>
