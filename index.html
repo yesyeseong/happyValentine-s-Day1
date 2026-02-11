@@ -1,17 +1,19 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>발렌타인 기념</title>
-    <link rel="stylesheet" href="styles.css"> <!-- 공통 CSS 파일 링크 -->
-</head>
 <body>
-    <div>
-        <h1>우리의 특별한 날을 축하해!</h1>
-        <img src="your_memory_photo.jpg" alt="우리의 추억">
-        <p>너를 사랑해!</p>
-        <button onclick="location.href='game.html'">게임 시작</button>
-    </div>
+<div class="container">
+    <h1>💝 우리의 특별한 날 💝</h1>
+    <img src="your_memory_photo.jpg">
+    <p>세상에서 제일 소중한 사람 💖</p>
+    <button onclick="location.href='game.html'">게임 시작</button>
+</div>
+
+<script>
+for(let i=0;i<20;i++){
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="❤️";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(3+Math.random()*3)+"s";
+    document.body.appendChild(heart);
+}
+</script>
 </body>
-</html>
