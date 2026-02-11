@@ -1,16 +1,20 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>축하 페이지</title>
-    <link rel="stylesheet" href="styles.css"> <!-- 공통 CSS 파일 링크 -->
-</head>
 <body>
-    <div>
-        <h1>축하해! 다음 페이지에 왔어요.</h1>
-        <img src="a1.jpg" alt="우리의 특별한 순간">
-        <p>너를 사랑해! 발렌타인데이 행복하게 보내자!</p>
+<div class="container">
+    <h1>🎉 축하해 🎉</h1>
+    <img src="a1.jpg">
+    <div class="big-message">
+        💖 사랑해 채영아 항상고마워 💖
     </div>
+</div>
+
+<script>
+for(let i=0;i<40;i++){
+    let heart=document.createElement("div");
+    heart.className="heart";
+    heart.innerHTML="💖";
+    heart.style.left=Math.random()*100+"vw";
+    heart.style.animationDuration=(2+Math.random()*2)+"s";
+    document.body.appendChild(heart);
+}
+</script>
 </body>
-</html>
